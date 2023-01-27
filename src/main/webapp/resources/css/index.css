@@ -1,0 +1,15 @@
+@charset "ISO-8859-1";
+
+table{
+	width: 70%;
+}
+
+#left{
+	position: relative;
+	left: -50px;
+}
+
+#right{
+	position: relative;
+	right: -50px;
+}

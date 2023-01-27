@@ -1,6 +1,8 @@
 package dao;
 
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -22,6 +24,21 @@ public class UserDao {
 			}
 			e.printStackTrace();
 		}
+	}
+	
+	public List<User> getAllUsers() {
+		List<User> usersList = null;
+		try (Session session = HibernateUtil.getSessionFactory().openSession()){
+			transaction = session.beginTransaction();
+			usersList = session.createQuery("from User").getResultList();
+			transaction.commit();
+		} catch (Exception e) {
+			if(transaction != null) {
+				transaction.rollback();
+			}
+			e.printStackTrace();
+		}
+		return usersList;
 	}
 
 }
