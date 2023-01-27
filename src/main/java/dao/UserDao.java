@@ -40,5 +40,47 @@ public class UserDao {
 		}
 		return usersList;
 	}
+	
+	public void deleteUser(int id) {
+		try (Session session = HibernateUtil.getSessionFactory().openSession()){
+			transaction = session.beginTransaction();
+			User user = session.get(User.class, id);
+			session.delete(user);
+			transaction.commit();
+		} catch (Exception e) {
+			if(transaction != null) {
+				transaction.rollback();
+			}
+			e.printStackTrace();
+		}
+	}
+	
+	public User getUserById(int id) {
+		User user = null;
+		try (Session session = HibernateUtil.getSessionFactory().openSession()){
+			transaction = session.beginTransaction();
+			user = (User) session.createQuery("from User where id = " + id).uniqueResult();
+			transaction.commit();
+		} catch (Exception e) {
+			if(transaction != null) {
+				transaction.rollback();
+			}
+			e.printStackTrace();
+		}
+		return user;
+	}
+	
+	public void updateUser(User user) {
+		try (Session session = HibernateUtil.getSessionFactory().openSession()){
+			transaction = session.beginTransaction();
+			session.update(user);
+			transaction.commit();
+		} catch (Exception e) {
+			if(transaction != null) {
+				transaction.rollback();
+			}
+			e.printStackTrace();
+		}
+	}
 
 }

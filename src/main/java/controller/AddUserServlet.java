@@ -29,7 +29,7 @@ public class AddUserServlet extends HttpServlet {
 		
 		dao.saveUser(user);
 		
-		req.getRequestDispatcher("index.jsp").forward(req, resp);
+		resp.sendRedirect("home");
 	}
 
 }
