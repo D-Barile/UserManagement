@@ -17,15 +17,15 @@
 					</tr>
 					<tr>
 						<th>Nome</th>
-						<td><input type="text" name="nome" size="50" value="${user.getNome()}" /></td>
+						<td><input type="text" name="nome" size="50" required="required" value="${user.getNome()}" /></td>
 					</tr>
 					<tr>
 						<th>Username</th>
-						<td><input type="text" name="username" size="50" value="${user.getUsername()}" /></td>
+						<td><input type="text" name="username" size="50" required="required" value="${user.getUsername()}" /></td>
 					</tr>
 					<tr>
 						<th>Email</th>
-						<td><input type="email" name="email" size="50" value="${user.getEmail()}"/></td>
+						<td><input type="email" name="email" size="50" required="required" value="${user.getEmail()}"/></td>
 					</tr>
 				</table>
 				<button type="submit">Aggiorna utente</button>

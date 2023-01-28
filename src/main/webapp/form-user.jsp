@@ -13,15 +13,15 @@
 				<table border="1">
 					<tr>
 						<th>Nome:</th>
-						<td><input type="text" name="nome" size="50" placeholder="Nome" /></td>
+						<td><input type="text" name="nome" size="50" required="required" placeholder="Nome" /></td>
 					</tr>
 					<tr>
 						<th>Username:</th>
-						<td><input type="text" name="username" size="50" placeholder="Username" /></td>
+						<td><input type="text" name="username" size="50" required="required" placeholder="Username" /></td>
 					</tr>
 					<tr>
 						<th>Email:</th>
-						<td><input type="email" name="email" size="50" placeholder="Email" /></td>
+						<td><input type="email" name="email" size="50" required="required" placeholder="Email" /></td>
 					</tr>
 				</table>
 				<button type="submit">Salva utente</button>
